@@ -14,7 +14,7 @@ class StatusBarController {
     
     init(_ popover: NSPopover) {
         self.popover = popover
-        statusBar = NSStatusBar.init()
+        statusBar = NSStatusBar()
         // Creating a status bar item having a fixed length
         statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
 
@@ -27,6 +27,27 @@ class StatusBarController {
             statusBarButton.action = #selector(togglePopover(sender:))
             statusBarButton.target = self
         }
+        
+        constructMenu()
+    }
+    
+    func constructMenu() {
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Sign Up", action: #selector(self.signUpAction(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Sign In", action: #selector(self.signInAction(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "New Note", action: #selector(self.newNoteAction(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Preferences", action: #selector(self.preferencesAction(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(self.quitAction(_:)), keyEquivalent: "q"))
+        
+        for mi in menu.items {
+            if mi.title != ""  {
+                mi.target = self
+            }
+        }
+        
+        statusItem.menu = menu
     }
     
     @objc func togglePopover(sender: AnyObject) {
@@ -46,5 +67,25 @@ class StatusBarController {
     
     func hidePopover(_ sender: AnyObject) {
         popover.performClose(sender)
+    }
+    
+    @objc func signUpAction(_ sender: AnyObject) {
+        
+    }
+    
+    @objc func signInAction(_ sender: AnyObject) {
+        
+    }
+    
+    @objc func newNoteAction(_ sender: AnyObject) {
+        
+    }
+    
+    @objc func preferencesAction(_ sender: AnyObject) {
+        
+    }
+    
+    @objc func quitAction(_ sender: AnyObject) {
+        NSApplication.shared.terminate(nil)
     }
 }
