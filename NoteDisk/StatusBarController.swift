@@ -12,9 +12,13 @@ class StatusBarController {
     private var statusItem: NSStatusItem
     private var popover: NSPopover
     
-    init(_ popover: NSPopover) {
-        self.popover = popover
+    init() {
+        // Set the SwiftUI's ContentView to the Popover's ContentViewController
+        popover = NSPopover()
+        popover.contentSize = NSSize(width: 360, height: 360)
+        popover.behavior = .transient
         statusBar = NSStatusBar()
+        
         // Creating a status bar item having a fixed length
         statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
 
