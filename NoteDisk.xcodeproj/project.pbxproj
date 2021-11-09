@@ -22,6 +22,7 @@
 		CD2E05A72739670C00C7D374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD2E05A92739670C00C7D374 /* NoteDisk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoteDisk.entitlements; sourceTree = "<group>"; };
 		CD2E05AF2739688700C7D374 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		CD80188D273A552000DAE7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		CD2E059F2739670A00C7D374 /* NoteDisk */ = {
 			isa = PBXGroup;
 			children = (
+				CD80188D273A552000DAE7E9 /* Info.plist */,
 				CD2E05A02739670A00C7D374 /* AppDelegate.swift */,
 				CD2E05A22739670A00C7D374 /* ViewController.swift */,
 				CD2E05A42739670B00C7D374 /* Assets.xcassets */,
@@ -281,6 +283,7 @@
 				DEVELOPMENT_TEAM = 43XWV24N7U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NoteDisk/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -308,6 +311,7 @@
 				DEVELOPMENT_TEAM = 43XWV24N7U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NoteDisk/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
