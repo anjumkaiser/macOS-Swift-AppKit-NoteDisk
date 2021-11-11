@@ -13,10 +13,12 @@ class PreferencesVC : ViewController {
     @IBOutlet weak var configureSearchHotKeyButton: NSButton!
     
     override func viewWillAppear() {
+        super.viewWillAppear()
         NSApp.setActivationPolicy(.regular)
     }
     
     override func viewWillDisappear() {
+        super.viewWillDisappear()
         NSApp.setActivationPolicy(.accessory)
     }
     
