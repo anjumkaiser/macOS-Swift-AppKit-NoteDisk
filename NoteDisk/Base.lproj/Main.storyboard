@@ -713,7 +713,73 @@
                     <view key="view" id="OZK-EF-z7y">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RF7-fQ-8Sh">
+                                <rect key="frame" x="118" y="147" width="159" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="yPV-6x-kyj"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Open Note" id="fdg-U9-edB">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MGP-Je-TeU">
+                                <rect key="frame" x="118" y="106" width="159" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Search" id="zPU-ff-mUE">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9kS-Z1-aXg">
+                                <rect key="frame" x="292" y="138" width="76" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4u9-fM-9aM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="configureOpenNoteHotKeyButton_Clicked:" target="0Xt-hq-CZn" id="6JS-GH-2BL"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lH6-jk-AQB">
+                                <rect key="frame" x="292" y="97" width="76" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SQu-jM-m3d">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="configureSearchHotKeyButton_clicked:" target="0Xt-hq-CZn" id="Zvx-9l-A00"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tsS-aW-17n">
+                                <rect key="frame" x="148" y="209" width="164" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Configure Global Hot Keys" id="e7a-jx-GUU">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="RF7-fQ-8Sh" firstAttribute="leading" secondItem="MGP-Je-TeU" secondAttribute="leading" id="1I7-eH-tNG"/>
+                            <constraint firstItem="MGP-Je-TeU" firstAttribute="centerY" secondItem="lH6-jk-AQB" secondAttribute="centerY" id="AtF-M3-3Mn"/>
+                            <constraint firstItem="lH6-jk-AQB" firstAttribute="top" secondItem="9kS-Z1-aXg" secondAttribute="bottom" constant="21" id="JG3-GH-Tmk"/>
+                            <constraint firstItem="RF7-fQ-8Sh" firstAttribute="centerY" secondItem="9kS-Z1-aXg" secondAttribute="centerY" id="SMJ-wp-DDV"/>
+                            <constraint firstItem="tsS-aW-17n" firstAttribute="leading" secondItem="OZK-EF-z7y" secondAttribute="leading" constant="150" id="bVc-nh-jg8"/>
+                            <constraint firstItem="tsS-aW-17n" firstAttribute="top" secondItem="OZK-EF-z7y" secondAttribute="top" constant="45" id="dJG-fJ-E3k"/>
+                            <constraint firstItem="9kS-Z1-aXg" firstAttribute="leading" secondItem="RF7-fQ-8Sh" secondAttribute="trailing" constant="24" id="dsf-hQ-Lhc"/>
+                            <constraint firstItem="9kS-Z1-aXg" firstAttribute="leading" secondItem="lH6-jk-AQB" secondAttribute="leading" id="e3x-W8-QcH"/>
+                            <constraint firstItem="RF7-fQ-8Sh" firstAttribute="leading" secondItem="OZK-EF-z7y" secondAttribute="leading" constant="120" id="hRy-f0-DqQ"/>
+                            <constraint firstItem="RF7-fQ-8Sh" firstAttribute="trailing" secondItem="MGP-Je-TeU" secondAttribute="trailing" id="mQS-fj-gIS"/>
+                            <constraint firstItem="9kS-Z1-aXg" firstAttribute="top" secondItem="tsS-aW-17n" secondAttribute="bottom" constant="44" id="wlt-eq-ILw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="configureOpenNoteHotKeyButton" destination="9kS-Z1-aXg" id="IBJ-Mv-lZG"/>
+                        <outlet property="configureSearchHotKeyButton" destination="lH6-jk-AQB" id="Evk-Wg-5HQ"/>
+                    </connections>
                 </viewController>
                 <customObject id="P8M-er-3rY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

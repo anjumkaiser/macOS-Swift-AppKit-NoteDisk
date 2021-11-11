@@ -8,11 +8,22 @@
 import Cocoa
 
 class PreferencesVC : ViewController {
+    
+    @IBOutlet weak var configureOpenNoteHotKeyButton: NSButton!
+    @IBOutlet weak var configureSearchHotKeyButton: NSButton!
+    
     override func viewWillAppear() {
         NSApp.setActivationPolicy(.regular)
     }
     
     override func viewWillDisappear() {
         NSApp.setActivationPolicy(.accessory)
+    }
+    
+    
+    @IBAction func configureOpenNoteHotKeyButton_Clicked(_ sender: Any) {
+    }
+    
+    @IBAction func configureSearchHotKeyButton_clicked(_ sender: Any) {
     }
 }
