@@ -12,6 +12,8 @@ class StatusBarController {
     private var statusItem: NSStatusItem
     private var popover: NSPopover
     
+    private var preferencesWC: PreferencesWC?
+    
     init() {
         // Set the SwiftUI's ContentView to the Popover's ContentViewController
         popover = NSPopover()
@@ -86,6 +88,11 @@ class StatusBarController {
     }
     
     @objc func preferencesAction(_ sender: AnyObject) {
+        
+        if preferencesWC == nil {
+            preferencesWC = NSStoryboard.main?.instantiateController(withIdentifier: "preferencesWCID") as? PreferencesWC
+        }
+        preferencesWC?.showWindow(nil)
         
     }
     

@@ -12,6 +12,8 @@
 		CD2E05A52739670B00C7D374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2E05A42739670B00C7D374 /* Assets.xcassets */; };
 		CD2E05A82739670C00C7D374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2E05A62739670C00C7D374 /* Main.storyboard */; };
 		CD2E05B02739688700C7D374 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E05AF2739688700C7D374 /* StatusBarController.swift */; };
+		CD9A835B273D1262009F6B04 /* PreferencesWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835A273D1262009F6B04 /* PreferencesWC.swift */; };
+		CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		CD2E05A92739670C00C7D374 /* NoteDisk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoteDisk.entitlements; sourceTree = "<group>"; };
 		CD2E05AF2739688700C7D374 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		CD80188D273A552000DAE7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CD9A835A273D1262009F6B04 /* PreferencesWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWC.swift; sourceTree = "<group>"; };
+		CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				CD2E05A62739670C00C7D374 /* Main.storyboard */,
 				CD2E05A92739670C00C7D374 /* NoteDisk.entitlements */,
 				CD2E05AF2739688700C7D374 /* StatusBarController.swift */,
+				CD9A835A273D1262009F6B04 /* PreferencesWC.swift */,
+				CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */,
 			);
 			path = NoteDisk;
 			sourceTree = "<group>";
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */,
 				CD2E05A32739670A00C7D374 /* ViewController.swift in Sources */,
 				CD2E05B02739688700C7D374 /* StatusBarController.swift in Sources */,
+				CD9A835B273D1262009F6B04 /* PreferencesWC.swift in Sources */,
 				CD2E05A12739670A00C7D374 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
