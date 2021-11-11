@@ -8,5 +8,11 @@
 import Cocoa
 
 class PreferencesVC : ViewController {
+    override func viewWillAppear() {
+        NSApp.setActivationPolicy(.regular)
+    }
     
+    override func viewWillDisappear() {
+        NSApp.setActivationPolicy(.accessory)
+    }
 }
