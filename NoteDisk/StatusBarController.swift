@@ -6,6 +6,7 @@
 //
 
 import AppKit
+import HotKey
 
 class StatusBarController {
     private var statusBar: NSStatusBar
@@ -98,5 +99,30 @@ class StatusBarController {
     
     @objc func quitAction(_ sender: AnyObject) {
         NSApplication.shared.terminate(nil)
+    }
+    
+    var openNoteHotKey: HotKey? {
+        didSet {
+            guard let openNoteHotKey = openNoteHotKey else {
+                return
+            }
+            
+            openNoteHotKey.keyUpHandler = { [weak self] in
+                print("open note hotkey pressed")
+            }
+        }
+    }
+    
+    var searchHotKey: HotKey? {
+        didSet {
+            guard let searchHotKey = searchHotKey else {
+                return
+            }
+            
+            searchHotKey.keyUpHandler = { [weak self] in
+                print("search hotkey pressed")
+            }
+
+        }
     }
 }
