@@ -15,24 +15,32 @@ class Configuration {
     private init() {
     }
     
-    private let OPEN_NOTE_HOTHEY_KEY = "OpenNoteHotKey"
-    private let SEARCH_HOTHEY_KEY = "SearchHotKey"
+    private static let OPEN_NOTE_HOTHEY_KEY = "OpenNoteHotKey"
+    private static let SEARCH_HOTHEY_KEY = "SearchHotKey"
     
-    var openNoteHotKey: String? {
+    var openNoteHotKey: GlobalHotKeyData? {
         set {
-            UserDefaults.standard.set(newValue, forKey: OPEN_NOTE_HOTHEY_KEY)
+            UserDefaults.standard.setValue(try? PropertyListEncoder().encode(newValue), forKey: Configuration.OPEN_NOTE_HOTHEY_KEY)
         }
         get {
-            return UserDefaults.standard.string(forKey: OPEN_NOTE_HOTHEY_KEY)
+            if let data = UserDefaults.standard.value(forKey: Configuration.OPEN_NOTE_HOTHEY_KEY) as? Data {
+                let x = try? PropertyListDecoder().decode(GlobalHotKeyData.self, from: data)
+                return x
+            }
+            return nil
         }
     }
     
-    var searchHotKey: String? {
+    var searchHotKey: GlobalHotKeyData? {
         set {
-            UserDefaults.standard.set(newValue, forKey: SEARCH_HOTHEY_KEY)
+            UserDefaults.standard.setValue(try? PropertyListEncoder().encode(newValue), forKey: Configuration.SEARCH_HOTHEY_KEY)
         }
         get {
-            return UserDefaults.standard.string(forKey: SEARCH_HOTHEY_KEY)
+            if let data = UserDefaults.standard.value(forKey: Configuration.SEARCH_HOTHEY_KEY) as? Data {
+                let x = try? PropertyListDecoder().decode(GlobalHotKeyData.self, from: data)
+                return x
+            }
+            return nil
         }
     }
 }

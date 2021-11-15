@@ -28,8 +28,8 @@ class PreferencesVC : NSViewController {
         super.viewWillAppear()
         NSApp.setActivationPolicy(.regular)
         
-        configureOpenNoteHotKeyButton.title = Configuration.shared.openNoteHotKey ?? CLICK_TO_SET_MSG
-        configureSearchHotKeyButton.title = Configuration.shared.searchHotKey ?? CLICK_TO_SET_MSG
+        configureSearchHotKeyButton.title = Configuration.shared.searchHotKey?.description ?? CLICK_TO_SET_MSG
+        configureOpenNoteHotKeyButton.title = Configuration.shared.openNoteHotKey?.description ?? CLICK_TO_SET_MSG
     }
     
     override func viewWillDisappear() {
@@ -56,10 +56,12 @@ class PreferencesVC : NSViewController {
             let keyString = globalkeyData.description
             let appDelegate = NSApplication.shared.delegate as? AppDelegate
             if grabKey == .OpenNote {
+                Configuration.shared.openNoteHotKey = globalkeyData
                 appDelegate?.statusBarController.openNoteHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalkeyData.keyCode, carbonModifiers: globalkeyData.carbonFlags))
                 self.configureOpenNoteHotKeyButton.title = keyString
                 self.configureOpenNoteHotKeyButton.highlight(false)
             } else if grabKey == .Search {
+                Configuration.shared.searchHotKey = globalkeyData
                 appDelegate?.statusBarController.searchHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalkeyData.keyCode, carbonModifiers: globalkeyData.carbonFlags))
                 self.configureSearchHotKeyButton.title = keyString
                 self.configureSearchHotKeyButton.highlight(false)
