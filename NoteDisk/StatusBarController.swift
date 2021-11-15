@@ -36,6 +36,15 @@ class StatusBarController {
         }
         
         constructMenu()
+        
+        if let openNoteHotKeyConfig = Configuration.shared.openNoteHotKey {
+            openNoteHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: openNoteHotKeyConfig.keyCode, carbonModifiers: openNoteHotKeyConfig.carbonFlags))
+        }
+        
+        if let searchHotKeyConfig = Configuration.shared.searchHotKey {
+            searchHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: searchHotKeyConfig.keyCode, carbonModifiers: searchHotKeyConfig.carbonFlags))
+        }
+
     }
     
     func constructMenu() {
@@ -107,7 +116,7 @@ class StatusBarController {
                 return
             }
             
-            openNoteHotKey.keyUpHandler = { [weak self] in
+            openNoteHotKey.keyDownHandler = { [weak self] in
                 print("open note hotkey pressed")
             }
         }
@@ -119,7 +128,7 @@ class StatusBarController {
                 return
             }
             
-            searchHotKey.keyUpHandler = { [weak self] in
+            searchHotKey.keyDownHandler = { [weak self] in
                 print("search hotkey pressed")
             }
 
