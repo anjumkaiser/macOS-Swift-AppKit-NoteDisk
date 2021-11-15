@@ -56,11 +56,11 @@ class PreferencesVC : NSViewController {
             let keyString = globalkeyData.description
             let appDelegate = NSApplication.shared.delegate as? AppDelegate
             if grabKey == .OpenNote {
-                appDelegate?.statusBarController.openNoteHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: UInt32(event.keyCode), carbonModifiers: event.modifierFlags.carbonFlags))
+                appDelegate?.statusBarController.openNoteHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalkeyData.keyCode, carbonModifiers: globalkeyData.carbonFlags))
                 self.configureOpenNoteHotKeyButton.title = keyString
                 self.configureOpenNoteHotKeyButton.highlight(false)
             } else if grabKey == .Search {
-                appDelegate?.statusBarController.searchHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: UInt32(event.keyCode), carbonModifiers: event.modifierFlags.carbonFlags))
+                appDelegate?.statusBarController.searchHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalkeyData.keyCode, carbonModifiers: globalkeyData.carbonFlags))
                 self.configureSearchHotKeyButton.title = keyString
                 self.configureSearchHotKeyButton.highlight(false)
             }
