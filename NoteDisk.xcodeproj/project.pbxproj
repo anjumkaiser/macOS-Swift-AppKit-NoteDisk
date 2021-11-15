@@ -15,6 +15,7 @@
 		CD9A835B273D1262009F6B04 /* PreferencesWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835A273D1262009F6B04 /* PreferencesWC.swift */; };
 		CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */; };
 		CDB4A0E9273D2DA70084AD53 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB4A0E8273D2DA70084AD53 /* Configuration.swift */; };
+		CDB660F42742517A00D901F2 /* GlobalHotKeyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB660F32742517A00D901F2 /* GlobalHotKeyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CD9A835A273D1262009F6B04 /* PreferencesWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWC.swift; sourceTree = "<group>"; };
 		CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
 		CDB4A0E8273D2DA70084AD53 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		CDB660F32742517A00D901F2 /* GlobalHotKeyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalHotKeyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +68,11 @@
 				CD2E05A42739670B00C7D374 /* Assets.xcassets */,
 				CD2E05A62739670C00C7D374 /* Main.storyboard */,
 				CD2E05A92739670C00C7D374 /* NoteDisk.entitlements */,
-				CD2E05AF2739688700C7D374 /* StatusBarController.swift */,
+				CDB4A0E8273D2DA70084AD53 /* Configuration.swift */,
+				CDB660F32742517A00D901F2 /* GlobalHotKeyData.swift */,
 				CD9A835A273D1262009F6B04 /* PreferencesWC.swift */,
 				CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */,
-				CDB4A0E8273D2DA70084AD53 /* Configuration.swift */,
+				CD2E05AF2739688700C7D374 /* StatusBarController.swift */,
 			);
 			path = NoteDisk;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */,
 				CD2E05B02739688700C7D374 /* StatusBarController.swift in Sources */,
 				CD9A835B273D1262009F6B04 /* PreferencesWC.swift in Sources */,
+				CDB660F42742517A00D901F2 /* GlobalHotKeyData.swift in Sources */,
 				CD2E05A12739670A00C7D374 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
