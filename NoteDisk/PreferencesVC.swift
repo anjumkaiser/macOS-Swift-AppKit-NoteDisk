@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class PreferencesVC : ViewController {
+class PreferencesVC : NSViewController {
     
     @IBOutlet weak var configureOpenNoteHotKeyButton: NSButton!
     @IBOutlet weak var configureSearchHotKeyButton: NSButton!
