@@ -14,7 +14,9 @@ class PreferencesVC : NSViewController {
     @IBOutlet weak var configureOpenNoteHotKeyButton: NSButton!
     @IBOutlet weak var configureSearchHotKeyButton: NSButton!
     
-    private let CLICK_TO_SET_MSG: String = "Click to set"
+    static private let CLICK_TO_SET_MSG: String = "Click to set"
+    static private let PRESS_DESIRED_KEY_MSG: String = ">> <<"
+    
     fileprivate var grabKey: KeyToGrab = .None
     
     override func viewDidLoad() {
@@ -28,8 +30,8 @@ class PreferencesVC : NSViewController {
         super.viewWillAppear()
         NSApp.setActivationPolicy(.regular)
         
-        configureSearchHotKeyButton.title = Configuration.shared.searchHotKey?.description ?? CLICK_TO_SET_MSG
-        configureOpenNoteHotKeyButton.title = Configuration.shared.openNoteHotKey?.description ?? CLICK_TO_SET_MSG
+        configureSearchHotKeyButton.title = Configuration.shared.searchHotKey?.description ?? PreferencesVC.CLICK_TO_SET_MSG
+        configureOpenNoteHotKeyButton.title = Configuration.shared.openNoteHotKey?.description ?? PreferencesVC.CLICK_TO_SET_MSG
     }
     
     override func viewWillDisappear() {
@@ -59,12 +61,10 @@ class PreferencesVC : NSViewController {
                 Configuration.shared.openNoteHotKey = globalkeyData
                 appDelegate?.statusBarController.openNoteHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalkeyData.keyCode, carbonModifiers: globalkeyData.carbonFlags))
                 self.configureOpenNoteHotKeyButton.title = keyString
-                self.configureOpenNoteHotKeyButton.highlight(false)
             } else if grabKey == .Search {
                 Configuration.shared.searchHotKey = globalkeyData
                 appDelegate?.statusBarController.searchHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalkeyData.keyCode, carbonModifiers: globalkeyData.carbonFlags))
                 self.configureSearchHotKeyButton.title = keyString
-                self.configureSearchHotKeyButton.highlight(false)
             }
             grabKey = KeyToGrab.None
         }
@@ -72,12 +72,12 @@ class PreferencesVC : NSViewController {
     
     @IBAction func configureOpenNoteHotKeyButton_Clicked(_ sender: Any) {
         grabKey = .OpenNote
-        self.configureOpenNoteHotKeyButton.highlight(true)
+        self.configureOpenNoteHotKeyButton.title = PreferencesVC.PRESS_DESIRED_KEY_MSG
     }
     
     @IBAction func configureSearchHotKeyButton_clicked(_ sender: Any) {
         grabKey = .Search
-        self.configureSearchHotKeyButton.highlight(true)
+        self.configureSearchHotKeyButton.title = PreferencesVC.PRESS_DESIRED_KEY_MSG
     }
 }
 
