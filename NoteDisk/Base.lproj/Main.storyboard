@@ -814,6 +814,8 @@ Gw
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="eUW-n5-ohQ" id="pfL-bI-oUw"/>
+                        <outlet property="emailTextField" destination="UeM-Xz-lCo" id="e5O-mW-HdS"/>
+                        <outlet property="passwordTextField" destination="o7B-yU-OQz" id="RMF-el-UD8"/>
                         <outlet property="signInButton" destination="InP-8s-BkS" id="50F-kc-RCN"/>
                     </connections>
                 </viewController>

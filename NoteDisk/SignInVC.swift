@@ -14,6 +14,8 @@ enum SignInMode {
 
 class SignInVC: NSViewController {
     
+    @IBOutlet weak var emailTextField: NSTextField!
+    @IBOutlet weak var passwordTextField: NSSecureTextField!
     @IBOutlet weak var signInButton: NSButton!
     @IBOutlet weak var cancelButton: NSButtonCell!
     
