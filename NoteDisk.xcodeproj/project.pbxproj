@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CD0DFCDB2743CEBD005725FE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD0DFCDA2743CEBD005725FE /* Alamofire */; };
+		CD0DFCDD2743D099005725FE /* SignInWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0DFCDC2743D099005725FE /* SignInWC.swift */; };
+		CD0DFCDF2743D0A8005725FE /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0DFCDE2743D0A8005725FE /* SignInVC.swift */; };
 		CD2E05A12739670A00C7D374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E05A02739670A00C7D374 /* AppDelegate.swift */; };
 		CD2E05A52739670B00C7D374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2E05A42739670B00C7D374 /* Assets.xcassets */; };
 		CD2E05A82739670C00C7D374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2E05A62739670C00C7D374 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD0DFCDC2743D099005725FE /* SignInWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWC.swift; sourceTree = "<group>"; };
+		CD0DFCDE2743D0A8005725FE /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		CD2E059D2739670A00C7D374 /* NoteDisk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteDisk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2E05A02739670A00C7D374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD2E05A42739670B00C7D374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				CD9A835A273D1262009F6B04 /* PreferencesWC.swift */,
 				CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */,
 				CD2E05AF2739688700C7D374 /* StatusBarController.swift */,
+				CD0DFCDC2743D099005725FE /* SignInWC.swift */,
+				CD0DFCDE2743D0A8005725FE /* SignInVC.swift */,
 			);
 			path = NoteDisk;
 			sourceTree = "<group>";
@@ -157,6 +163,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD0DFCDF2743D0A8005725FE /* SignInVC.swift in Sources */,
+				CD0DFCDD2743D099005725FE /* SignInWC.swift in Sources */,
 				CDB4A0E9273D2DA70084AD53 /* Configuration.swift in Sources */,
 				CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */,
 				CD2E05B02739688700C7D374 /* StatusBarController.swift in Sources */,

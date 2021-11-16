@@ -14,6 +14,7 @@ class StatusBarController {
     private var popover: NSPopover
     
     private var preferencesWC: PreferencesWC?
+    private var signInWC: SignInWC?
     
     init() {
         // Set the SwiftUI's ContentView to the Popover's ContentViewController
@@ -86,11 +87,21 @@ class StatusBarController {
     }
     
     @objc func signUpAction(_ sender: AnyObject) {
-        
+        if signInWC == nil {
+            signInWC = NSStoryboard.main?.instantiateController(withIdentifier: "signInWCID") as? SignInWC
+        }
+        signInWC?.close()
+        (signInWC?.contentViewController as? SignInVC)?.mode = .SignUp
+        signInWC?.showWindow(nil)
     }
     
     @objc func signInAction(_ sender: AnyObject) {
-        
+        if signInWC == nil {
+            signInWC = NSStoryboard.main?.instantiateController(withIdentifier: "signInWCID") as? SignInWC
+        }
+        signInWC?.window?.orderOut(self)
+        (signInWC?.contentViewController as? SignInVC)?.mode = .SignIn
+        signInWC?.showWindow(nil)
     }
     
     @objc func newNoteAction(_ sender: AnyObject) {

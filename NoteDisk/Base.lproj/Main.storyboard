@@ -706,10 +706,122 @@
             </objects>
             <point key="canvasLocation" x="-81" y="182"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="5RU-GB-Xr6">
+            <objects>
+                <windowController storyboardIdentifier="signInWCID" id="Hvg-88-VOf" customClass="SignInWC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Sign In" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="zVs-Ja-cY8">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+                        <view key="contentView" id="yDa-4h-bBu">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="Hvg-88-VOf" id="3yi-MK-S8I"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="twB-cx-Ol0" kind="relationship" relationship="window.shadowedContentViewController" id="oNG-Uh-wu6"/>
+                    </connections>
+                </windowController>
+                <customObject id="ETb-Bg-DXs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="182"/>
+        </scene>
+        <!--Sign In-->
+        <scene sceneID="cbO-oG-Vg7">
+            <objects>
+                <viewController title="Sign In" storyboardIdentifier="signInVCID" showSeguePresentationStyle="single" id="twB-cx-Ol0" customClass="SignInVC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="YIS-vP-lAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ih2-Sy-T6l">
+                                <rect key="frame" x="81" y="177" width="37" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Email" id="0fe-HO-bMu">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8H2-aC-V0V">
+                                <rect key="frame" x="81" y="139" width="63" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Password" id="IzL-1E-KTc">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UeM-Xz-lCo">
+                                <rect key="frame" x="175" y="174" width="239" height="21"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="CBT-Ra-F1C">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o7B-yU-OQz">
+                                <rect key="frame" x="175" y="139" width="239" height="21"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="PBp-iG-7dI">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="InP-8s-BkS">
+                                <rect key="frame" x="148" y="70" width="76" height="32"/>
+                                <buttonCell key="cell" type="push" title="Sign In" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YwB-5U-hdr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgD-by-L06">
+                                <rect key="frame" x="256" y="70" width="76" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eUW-n5-ohQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ih2-Sy-T6l" firstAttribute="leading" secondItem="YIS-vP-lAZ" secondAttribute="leading" constant="83" id="1fI-Lt-YUX"/>
+                            <constraint firstItem="UeM-Xz-lCo" firstAttribute="leading" secondItem="o7B-yU-OQz" secondAttribute="leading" id="6XT-qb-XXi"/>
+                            <constraint firstItem="IgD-by-L06" firstAttribute="leading" secondItem="InP-8s-BkS" secondAttribute="trailing" constant="46" id="A2E-RE-91f"/>
+                            <constraint firstItem="InP-8s-BkS" firstAttribute="baseline" secondItem="IgD-by-L06" secondAttribute="baseline" id="H6a-4Y-C1W"/>
+                            <constraint firstItem="o7B-yU-OQz" firstAttribute="leading" secondItem="8H2-aC-V0V" secondAttribute="trailing" constant="33" id="JSG-WG-r02"/>
+                            <constraint firstAttribute="trailing" secondItem="UeM-Xz-lCo" secondAttribute="trailing" constant="66" id="Osf-xc-wST"/>
+                            <constraint firstItem="ih2-Sy-T6l" firstAttribute="leading" secondItem="8H2-aC-V0V" secondAttribute="leading" id="Q7o-NP-PLj"/>
+                            <constraint firstItem="UeM-Xz-lCo" firstAttribute="top" secondItem="YIS-vP-lAZ" secondAttribute="top" constant="75" id="cjk-Ea-pwP"/>
+                            <constraint firstItem="InP-8s-BkS" firstAttribute="top" secondItem="o7B-yU-OQz" secondAttribute="bottom" constant="42" id="dWD-JB-2LT"/>
+                            <constraint firstItem="ih2-Sy-T6l" firstAttribute="baseline" secondItem="UeM-Xz-lCo" secondAttribute="baseline" id="hGx-hy-6vr"/>
+                            <constraint firstItem="UeM-Xz-lCo" firstAttribute="trailing" secondItem="o7B-yU-OQz" secondAttribute="trailing" id="hJl-jA-Rre"/>
+                            <constraint firstItem="o7B-yU-OQz" firstAttribute="top" secondItem="UeM-Xz-lCo" secondAttribute="bottom" constant="14" id="kY7-lg-LHz"/>
+                            <constraint firstItem="o7B-yU-OQz" firstAttribute="centerX" secondItem="IgD-by-L06" secondAttribute="centerX" id="mGf-A4-NGL"/>
+                            <constraint firstItem="8H2-aC-V0V" firstAttribute="bottom" secondItem="o7B-yU-OQz" secondAttribute="bottom" id="oek-Ul-yZr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="eUW-n5-ohQ" id="pfL-bI-oUw"/>
+                        <outlet property="signInButton" destination="InP-8s-BkS" id="50F-kc-RCN"/>
+                    </connections>
+                </viewController>
+                <customObject id="Ojm-Kx-7ss" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="589"/>
+        </scene>
         <!--PreferencesVC-->
         <scene sceneID="Tro-5h-8hL">
             <objects>
-                <viewController storyboardIdentifier="preferencesVCID" id="0Xt-hq-CZn" customClass="PreferencesVC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="preferencesVCID" showSeguePresentationStyle="single" id="0Xt-hq-CZn" customClass="PreferencesVC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="OZK-EF-z7y">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
