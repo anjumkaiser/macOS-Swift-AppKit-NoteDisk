@@ -900,5 +900,105 @@ Gw
             </objects>
             <point key="canvasLocation" x="-81" y="589"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="xhV-Mf-Ezx">
+            <objects>
+                <windowController storyboardIdentifier="newNoteWCID" id="hoj-Z1-htM" customClass="NewNoteWC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="New Note" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="7OI-zM-HrY">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+                        <view key="contentView" id="i7v-98-R34">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="hoj-Z1-htM" id="zDc-vW-E3L"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="DWT-W7-sdf" kind="relationship" relationship="window.shadowedContentViewController" id="lMV-Yh-HSH"/>
+                    </connections>
+                </windowController>
+                <customObject id="MqR-5L-3kF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="987" y="182"/>
+        </scene>
+        <!--New Note-->
+        <scene sceneID="2N2-CA-a2d">
+            <objects>
+                <viewController title="New Note" id="DWT-W7-sdf" customClass="NewNoteVC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="xN3-wX-Fvu">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gau-jj-f2F">
+                                <rect key="frame" x="18" y="234" width="444" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Note" id="Ng4-MR-joE">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dNl-K5-ap7">
+                                <rect key="frame" x="20" y="51" width="440" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="pew-5M-prj"/>
+                                </constraints>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="RwJ-0A-T91">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nqz-ax-KcQ">
+                                <rect key="frame" x="153" y="13" width="76" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="voP-Io-ZTA"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Post" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ngs-ib-0WT">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="postButton_Clicked:" target="DWT-W7-sdf" id="dcB-7t-GUs"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tkh-10-ZC5">
+                                <rect key="frame" x="251" y="13" width="76" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="i29-bo-H4u">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="closeButton_Clicked:" target="DWT-W7-sdf" id="Ip9-Th-W3S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dNl-K5-ap7" firstAttribute="top" secondItem="gau-jj-f2F" secondAttribute="bottom" constant="8" symbolic="YES" id="B9h-ng-fPN"/>
+                            <constraint firstItem="tkh-10-ZC5" firstAttribute="leading" secondItem="nqz-ax-KcQ" secondAttribute="trailing" constant="36" id="NPH-4a-gY0"/>
+                            <constraint firstItem="gau-jj-f2F" firstAttribute="leading" secondItem="xN3-wX-Fvu" secondAttribute="leading" constant="20" symbolic="YES" id="QMI-HL-skc"/>
+                            <constraint firstAttribute="trailing" secondItem="gau-jj-f2F" secondAttribute="trailing" constant="20" symbolic="YES" id="Rbo-Q2-Sro"/>
+                            <constraint firstItem="gau-jj-f2F" firstAttribute="leading" secondItem="dNl-K5-ap7" secondAttribute="leading" id="VxD-dz-5Q8"/>
+                            <constraint firstItem="gau-jj-f2F" firstAttribute="top" secondItem="xN3-wX-Fvu" secondAttribute="top" constant="20" symbolic="YES" id="Ynb-DJ-BZn"/>
+                            <constraint firstItem="nqz-ax-KcQ" firstAttribute="baseline" secondItem="tkh-10-ZC5" secondAttribute="baseline" id="mmV-02-ZqG"/>
+                            <constraint firstItem="gau-jj-f2F" firstAttribute="trailing" secondItem="dNl-K5-ap7" secondAttribute="trailing" id="qmm-ff-nhl"/>
+                            <constraint firstItem="nqz-ax-KcQ" firstAttribute="leading" secondItem="xN3-wX-Fvu" secondAttribute="leading" constant="160" id="sGG-6L-cEx"/>
+                            <constraint firstAttribute="bottom" secondItem="nqz-ax-KcQ" secondAttribute="bottom" constant="20" symbolic="YES" id="yt8-8D-Q7s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noteTextField" destination="dNl-K5-ap7" id="dCF-j2-3GW"/>
+                    </connections>
+                </viewController>
+                <customObject id="e7X-8I-5I2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="987" y="589"/>
+        </scene>
     </scenes>
 </document>

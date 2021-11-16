@@ -17,6 +17,8 @@
 		CD8674BC273D3D2500B73B27 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = CD8674BB273D3D2500B73B27 /* HotKey */; };
 		CD9A835B273D1262009F6B04 /* PreferencesWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835A273D1262009F6B04 /* PreferencesWC.swift */; };
 		CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */; };
+		CDA1FA6D27443E6B0037C126 /* NewNoteWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1FA6C27443E6B0037C126 /* NewNoteWC.swift */; };
+		CDA1FA6F27443E7A0037C126 /* NewNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1FA6E27443E7A0037C126 /* NewNoteVC.swift */; };
 		CDB4A0E9273D2DA70084AD53 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB4A0E8273D2DA70084AD53 /* Configuration.swift */; };
 		CDB660F42742517A00D901F2 /* GlobalHotKeyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB660F32742517A00D901F2 /* GlobalHotKeyData.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +35,8 @@
 		CD80188D273A552000DAE7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CD9A835A273D1262009F6B04 /* PreferencesWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWC.swift; sourceTree = "<group>"; };
 		CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
+		CDA1FA6C27443E6B0037C126 /* NewNoteWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteWC.swift; sourceTree = "<group>"; };
+		CDA1FA6E27443E7A0037C126 /* NewNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVC.swift; sourceTree = "<group>"; };
 		CDB4A0E8273D2DA70084AD53 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		CDB660F32742517A00D901F2 /* GlobalHotKeyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalHotKeyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,11 +80,13 @@
 				CD2E05A92739670C00C7D374 /* NoteDisk.entitlements */,
 				CDB4A0E8273D2DA70084AD53 /* Configuration.swift */,
 				CDB660F32742517A00D901F2 /* GlobalHotKeyData.swift */,
-				CD9A835A273D1262009F6B04 /* PreferencesWC.swift */,
+				CDA1FA6E27443E7A0037C126 /* NewNoteVC.swift */,
+				CDA1FA6C27443E6B0037C126 /* NewNoteWC.swift */,
 				CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */,
+				CD9A835A273D1262009F6B04 /* PreferencesWC.swift */,
 				CD2E05AF2739688700C7D374 /* StatusBarController.swift */,
-				CD0DFCDC2743D099005725FE /* SignInWC.swift */,
 				CD0DFCDE2743D0A8005725FE /* SignInVC.swift */,
+				CD0DFCDC2743D099005725FE /* SignInWC.swift */,
 			);
 			path = NoteDisk;
 			sourceTree = "<group>";
@@ -167,8 +173,10 @@
 				CD0DFCDD2743D099005725FE /* SignInWC.swift in Sources */,
 				CDB4A0E9273D2DA70084AD53 /* Configuration.swift in Sources */,
 				CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */,
+				CDA1FA6D27443E6B0037C126 /* NewNoteWC.swift in Sources */,
 				CD2E05B02739688700C7D374 /* StatusBarController.swift in Sources */,
 				CD9A835B273D1262009F6B04 /* PreferencesWC.swift in Sources */,
+				CDA1FA6F27443E7A0037C126 /* NewNoteVC.swift in Sources */,
 				CDB660F42742517A00D901F2 /* GlobalHotKeyData.swift in Sources */,
 				CD2E05A12739670A00C7D374 /* AppDelegate.swift in Sources */,
 			);
