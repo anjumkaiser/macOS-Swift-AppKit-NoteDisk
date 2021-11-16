@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0DFCDB2743CEBD005725FE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD0DFCDA2743CEBD005725FE /* Alamofire */; };
 		CD2E05A12739670A00C7D374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E05A02739670A00C7D374 /* AppDelegate.swift */; };
 		CD2E05A52739670B00C7D374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2E05A42739670B00C7D374 /* Assets.xcassets */; };
 		CD2E05A82739670C00C7D374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2E05A62739670C00C7D374 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8674BC273D3D2500B73B27 /* HotKey in Frameworks */,
+				CD0DFCDB2743CEBD005725FE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +97,7 @@
 			name = NoteDisk;
 			packageProductDependencies = (
 				CD8674BB273D3D2500B73B27 /* HotKey */,
+				CD0DFCDA2743CEBD005725FE /* Alamofire */,
 			);
 			productName = NoteDisk;
 			productReference = CD2E059D2739670A00C7D374 /* NoteDisk.app */;
@@ -126,6 +129,7 @@
 			mainGroup = CD2E05942739670A00C7D374;
 			packageReferences = (
 				CD8674BA273D3D2500B73B27 /* XCRemoteSwiftPackageReference "HotKey" */,
+				CD0DFCD92743CEBD005725FE /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = CD2E059E2739670A00C7D374 /* Products */;
 			projectDirPath = "";
@@ -371,6 +375,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CD0DFCD92743CEBD005725FE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		CD8674BA273D3D2500B73B27 /* XCRemoteSwiftPackageReference "HotKey" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/soffes/HotKey";
@@ -382,6 +394,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CD0DFCDA2743CEBD005725FE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0DFCD92743CEBD005725FE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		CD8674BB273D3D2500B73B27 /* HotKey */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CD8674BA273D3D2500B73B27 /* XCRemoteSwiftPackageReference "HotKey" */;
