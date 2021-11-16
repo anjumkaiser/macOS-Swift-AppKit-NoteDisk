@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import HotKey
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -17,6 +18,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         //Initialising the status bar
         statusBarController = StatusBarController()
+        
+        if let openNoteHotKeyConfig = Configuration.shared.openNoteHotKey {
+            statusBarController.openNoteHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: openNoteHotKeyConfig.keyCode, carbonModifiers: openNoteHotKeyConfig.carbonFlags))
+        }
+
+        if let searchHotKeyConfig = Configuration.shared.searchHotKey {
+            statusBarController.searchHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: searchHotKeyConfig.keyCode, carbonModifiers: searchHotKeyConfig.carbonFlags))
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

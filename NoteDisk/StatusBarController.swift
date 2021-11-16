@@ -38,14 +38,6 @@ class StatusBarController {
         }
         
         constructMenu()
-        
-        if let openNoteHotKeyConfig = Configuration.shared.openNoteHotKey {
-            openNoteHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: openNoteHotKeyConfig.keyCode, carbonModifiers: openNoteHotKeyConfig.carbonFlags))
-        }
-        
-        if let searchHotKeyConfig = Configuration.shared.searchHotKey {
-            searchHotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: searchHotKeyConfig.keyCode, carbonModifiers: searchHotKeyConfig.carbonFlags))
-        }
 
     }
     
@@ -132,7 +124,7 @@ class StatusBarController {
             }
             
             openNoteHotKey.keyDownHandler = { [weak self] in
-                print("open note hotkey pressed")
+                self?.newNoteAction(NSApplication.shared.self)
             }
         }
     }
