@@ -41,6 +41,7 @@ class SignInVC: NSViewController {
         super.viewWillDisappear()
         NSApp.setActivationPolicy(.accessory)
     }
+    
     @IBAction func cancelButton_Clicked(_ sender: Any) {
         self.view.window?.orderOut(self)
     }
