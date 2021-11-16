@@ -90,9 +90,9 @@ class StatusBarController {
         if signInWC == nil {
             signInWC = NSStoryboard.main?.instantiateController(withIdentifier: "signInWCID") as? SignInWC
         }
-        signInWC?.close()
+        signInWC?.window?.orderOut(self)
         (signInWC?.contentViewController as? SignInVC)?.mode = .SignUp
-        signInWC?.showWindow(nil)
+        signInWC?.showWindow(self)
     }
     
     @objc func signInAction(_ sender: AnyObject) {
@@ -101,7 +101,7 @@ class StatusBarController {
         }
         signInWC?.window?.orderOut(self)
         (signInWC?.contentViewController as? SignInVC)?.mode = .SignIn
-        signInWC?.showWindow(nil)
+        signInWC?.showWindow(self)
     }
     
     @objc func newNoteAction(_ sender: AnyObject) {
