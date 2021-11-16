@@ -711,7 +711,7 @@
             <objects>
                 <windowController storyboardIdentifier="signInWCID" id="Hvg-88-VOf" customClass="SignInWC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Sign In" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="zVs-Ja-cY8">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="294" y="313" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
@@ -790,6 +790,9 @@
 Gw
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="cancelButton_Clicked:" target="twB-cx-Ol0" id="oac-1n-xjJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
