@@ -780,6 +780,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="signInButton_Clicked:" target="twB-cx-Ol0" id="VUv-Vm-IBZ"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgD-by-L06">
                                 <rect key="frame" x="256" y="70" width="76" height="32"/>

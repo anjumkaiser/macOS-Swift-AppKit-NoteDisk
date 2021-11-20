@@ -141,4 +141,8 @@ class StatusBarController {
 
         }
     }
+    
+    func closeSignInWindow() {
+        signInWC?.window?.orderOut(self)
+    }
 }
