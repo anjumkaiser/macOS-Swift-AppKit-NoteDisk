@@ -14,6 +14,8 @@
 		CD2E05A52739670B00C7D374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2E05A42739670B00C7D374 /* Assets.xcassets */; };
 		CD2E05A82739670C00C7D374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2E05A62739670C00C7D374 /* Main.storyboard */; };
 		CD2E05B02739688700C7D374 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E05AF2739688700C7D374 /* StatusBarController.swift */; };
+		CD63022227497C4800B8AC57 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63022127497C4800B8AC57 /* SearchVC.swift */; };
+		CD63022427497C6500B8AC57 /* SearchWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63022327497C6500B8AC57 /* SearchWC.swift */; };
 		CD8674BC273D3D2500B73B27 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = CD8674BB273D3D2500B73B27 /* HotKey */; };
 		CD9A835B273D1262009F6B04 /* PreferencesWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835A273D1262009F6B04 /* PreferencesWC.swift */; };
 		CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */; };
@@ -32,6 +34,8 @@
 		CD2E05A72739670C00C7D374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD2E05A92739670C00C7D374 /* NoteDisk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoteDisk.entitlements; sourceTree = "<group>"; };
 		CD2E05AF2739688700C7D374 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		CD63022127497C4800B8AC57 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		CD63022327497C6500B8AC57 /* SearchWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWC.swift; sourceTree = "<group>"; };
 		CD80188D273A552000DAE7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CD9A835A273D1262009F6B04 /* PreferencesWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWC.swift; sourceTree = "<group>"; };
 		CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
@@ -84,9 +88,11 @@
 				CDA1FA6C27443E6B0037C126 /* NewNoteWC.swift */,
 				CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */,
 				CD9A835A273D1262009F6B04 /* PreferencesWC.swift */,
-				CD2E05AF2739688700C7D374 /* StatusBarController.swift */,
+				CD63022127497C4800B8AC57 /* SearchVC.swift */,
+				CD63022327497C6500B8AC57 /* SearchWC.swift */,
 				CD0DFCDE2743D0A8005725FE /* SignInVC.swift */,
 				CD0DFCDC2743D099005725FE /* SignInWC.swift */,
+				CD2E05AF2739688700C7D374 /* StatusBarController.swift */,
 			);
 			path = NoteDisk;
 			sourceTree = "<group>";
@@ -170,9 +176,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0DFCDF2743D0A8005725FE /* SignInVC.swift in Sources */,
+				CD63022227497C4800B8AC57 /* SearchVC.swift in Sources */,
 				CD0DFCDD2743D099005725FE /* SignInWC.swift in Sources */,
 				CDB4A0E9273D2DA70084AD53 /* Configuration.swift in Sources */,
 				CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */,
+				CD63022427497C6500B8AC57 /* SearchWC.swift in Sources */,
 				CDA1FA6D27443E6B0037C126 /* NewNoteWC.swift in Sources */,
 				CD2E05B02739688700C7D374 /* StatusBarController.swift in Sources */,
 				CD9A835B273D1262009F6B04 /* PreferencesWC.swift in Sources */,
@@ -317,10 +325,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NoteDisk/NoteDisk.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 43XWV24N7U;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NoteDisk/Info.plist;
@@ -345,6 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NoteDisk/NoteDisk.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;

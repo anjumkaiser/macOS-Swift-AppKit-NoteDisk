@@ -16,6 +16,7 @@ class StatusBarController {
     private var preferencesWC: PreferencesWC?
     private var signInWC: SignInWC?
     private var newNoteWC: NewNoteWC?
+    private var searchWC: SearchWC?
     
     init() {
         // Set the SwiftUI's ContentView to the Popover's ContentViewController
@@ -113,6 +114,15 @@ class StatusBarController {
         
     }
     
+    @objc func searchAction(_ sender: AnyObject, searchString: String = "") {
+        if searchWC == nil {
+            searchWC = NSStoryboard.main?.instantiateController(withIdentifier: "searchWCID") as? SearchWC
+        }
+        
+        (searchWC?.contentViewController as? SearchVC)?.searchString = searchString
+        searchWC?.showWindow(nil)
+    }
+    
     @objc func quitAction(_ sender: AnyObject) {
         NSApplication.shared.terminate(nil)
     }
@@ -136,7 +146,8 @@ class StatusBarController {
             }
             
             searchHotKey.keyDownHandler = { [weak self] in
-                print("search hotkey pressed")
+                let searchString: String = "asdf"
+                self?.searchAction(NSApplication.shared.self, searchString: searchString)
             }
 
         }
