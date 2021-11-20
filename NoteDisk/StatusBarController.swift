@@ -145,4 +145,8 @@ class StatusBarController {
     func closeSignInWindow() {
         signInWC?.window?.orderOut(self)
     }
+    
+    func closeNoteWindow() {
+        self.newNoteWC?.window?.orderOut(self)
+    }
 }
