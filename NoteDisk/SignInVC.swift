@@ -85,7 +85,7 @@ class SignInVC: NSViewController {
         urlRequest.setValue("appleication/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("appleication/json; charset=utf-8", forHTTPHeaderField: "Accept")
         
-        var token: String = ""
+        Configuration.shared.token = ""
         
         
         AF.request(urlRequest).responseJSON { (response) in
@@ -109,7 +109,7 @@ class SignInVC: NSViewController {
                     return
                 }
                 
-                token = respData.token
+                Configuration.shared.token = respData.token
                 print("token is \(respData.token)")
                 
             } else if self.mode == .SignUp {
