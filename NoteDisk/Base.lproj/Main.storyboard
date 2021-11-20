@@ -1039,7 +1039,7 @@ Gw
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9se-oI-G3X">
-                                <rect key="frame" x="20" y="20" width="440" height="21"/>
+                                <rect key="frame" x="20" y="28" width="440" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="bm6-f8-pZS">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1055,7 +1055,6 @@ Gw
                     </view>
                     <connections>
                         <outlet property="searchStringTextField" destination="9se-oI-G3X" id="eop-1M-lqE"/>
-                        <outlet property="searchTextField" destination="bm6-f8-pZS" id="LPy-Kq-71h"/>
                     </connections>
                 </viewController>
                 <customObject id="kUE-h0-tk7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
