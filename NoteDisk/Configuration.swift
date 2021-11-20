@@ -10,6 +10,8 @@ import Foundation
 
 class Configuration {
     
+    var token: String = ""
+    
     static var shared: Configuration = Configuration()
     
     private init() {
