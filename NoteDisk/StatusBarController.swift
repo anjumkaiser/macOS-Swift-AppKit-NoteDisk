@@ -114,12 +114,10 @@ class StatusBarController {
         
     }
     
-    @objc func searchAction(_ sender: AnyObject, searchString: String = "") {
+    @objc func searchAction(_ sender: AnyObject) {
         if searchWC == nil {
             searchWC = NSStoryboard.main?.instantiateController(withIdentifier: "searchWCID") as? SearchWC
         }
-        
-        (searchWC?.contentViewController as? SearchVC)?.searchString = searchString
         searchWC?.showWindow(nil)
     }
     
@@ -146,8 +144,7 @@ class StatusBarController {
             }
             
             searchHotKey.keyDownHandler = { [weak self] in
-                let searchString: String = "asdf"
-                self?.searchAction(NSApplication.shared.self, searchString: searchString)
+                self?.searchAction(NSApplication.shared.self)
             }
 
         }
