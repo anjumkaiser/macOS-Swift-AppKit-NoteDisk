@@ -82,6 +82,7 @@ class SearchVC: NSViewController {
             }
             
             self.searchResult = respData
+            self.searchResultsCollectionView.reloadData()
         }
     }
 }
