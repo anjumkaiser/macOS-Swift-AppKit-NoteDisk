@@ -23,6 +23,7 @@ class SearchVC: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         searchResultsCollectionView.dataSource = self
+        searchResultsCollectionView.delegate = self
         if let nibName = NSNib(nibNamed: "SearchResultCollectionViewItem", bundle: nil) {
             searchResultsCollectionView.register(nibName, forItemWithIdentifier: searchResultCollectionViewItemIdentifer)
         }
@@ -103,6 +104,19 @@ extension SearchVC: NSCollectionViewDataSource {
         item.textField?.stringValue = self.searchResult[indexPath.item]
         return item
         
+    }
+    
+}
+
+
+extension SearchVC: NSCollectionViewDelegate {
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        guard let firstItem = indexPaths.first else {
+            return
+        }
+        
+        print("Selected \(self.searchResult[firstItem.item])")
     }
     
 }
