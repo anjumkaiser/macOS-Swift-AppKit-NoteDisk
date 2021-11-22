@@ -1009,7 +1009,7 @@ Gw
         <scene sceneID="6pe-s0-ovB">
             <objects>
                 <windowController storyboardIdentifier="searchWCID" id="CWK-ZH-CW1" customClass="SearchWC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="MlQ-U3-UnY">
+                    <window key="window" title="Search" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="MlQ-U3-UnY">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="294" y="313" width="480" height="270"/>
@@ -1030,22 +1030,48 @@ Gw
             </objects>
             <point key="canvasLocation" x="1521" y="182"/>
         </scene>
-        <!--SearchVC-->
+        <!--Search-->
         <scene sceneID="ve4-K0-iv2">
             <objects>
-                <viewController storyboardIdentifier="searchVCID" id="zE6-7w-jci" customClass="SearchVC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search" storyboardIdentifier="searchVCID" id="zE6-7w-jci" customClass="SearchVC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Qc0-7v-Y3Z">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="61"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9se-oI-G3X">
-                                <rect key="frame" x="20" y="28" width="440" height="21"/>
+                                <rect key="frame" x="20" y="229" width="440" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="bm6-f8-pZS">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7G-5S-ccp">
+                                <rect key="frame" x="20" y="20" width="440" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" id="A8H-9B-PKf">
+                                    <rect key="frame" x="1" y="1" width="438" height="193"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="0oT-Cq-gKa">
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="lwZ-9D-qRQ">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="YNB-C5-S0d">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="FjP-rm-gPw">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="9se-oI-G3X" firstAttribute="leading" secondItem="Qc0-7v-Y3Z" secondAttribute="leading" constant="20" symbolic="YES" id="9iE-Zw-mdY"/>
@@ -1054,12 +1080,13 @@ Gw
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchResultsCollectionView" destination="0oT-Cq-gKa" id="yNY-kX-oIK"/>
                         <outlet property="searchStringTextField" destination="9se-oI-G3X" id="eop-1M-lqE"/>
                     </connections>
                 </viewController>
                 <customObject id="kUE-h0-tk7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521" y="484.5"/>
+            <point key="canvasLocation" x="1521" y="589"/>
         </scene>
     </scenes>
 </document>
