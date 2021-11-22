@@ -22,6 +22,10 @@ class SearchVC: NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        searchResult.append("ABCD")
+        searchResult.append("BCDE")
+        searchResult.append("CDEF")
+        searchResult.append("DEFG")
         searchResultsCollectionView.dataSource = self
         searchResultsCollectionView.delegate = self
         if let nibName = NSNib(nibNamed: "SearchResultCollectionViewItem", bundle: nil) {
@@ -125,6 +129,15 @@ extension SearchVC: NSCollectionViewDelegate {
         guard let firstItem = indexPaths.first else { return }
         guard let selectedItem = searchResultsCollectionView.item(at: firstItem) else { return }
         (selectedItem as? SearchResultCollectionViewItem)?.setHighlight(selected: false)
+    }
+
+}
+
+extension SearchVC: NSCollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt: IndexPath) -> NSSize {
+        
+        return NSSize(width: parent?.view.visibleRect.width ?? 438, height: 16.0)
     }
     
 }
