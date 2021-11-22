@@ -16,6 +16,8 @@
 		CD2E05B02739688700C7D374 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E05AF2739688700C7D374 /* StatusBarController.swift */; };
 		CD63022227497C4800B8AC57 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63022127497C4800B8AC57 /* SearchVC.swift */; };
 		CD63022427497C6500B8AC57 /* SearchWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63022327497C6500B8AC57 /* SearchWC.swift */; };
+		CD7057DE274C39D500DE188B /* SearchResultCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7057DC274C39D500DE188B /* SearchResultCollectionViewItem.swift */; };
+		CD7057DF274C39D500DE188B /* SearchResultCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7057DD274C39D500DE188B /* SearchResultCollectionViewItem.xib */; };
 		CD8674BC273D3D2500B73B27 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = CD8674BB273D3D2500B73B27 /* HotKey */; };
 		CD9A835B273D1262009F6B04 /* PreferencesWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835A273D1262009F6B04 /* PreferencesWC.swift */; };
 		CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */; };
@@ -36,6 +38,8 @@
 		CD2E05AF2739688700C7D374 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		CD63022127497C4800B8AC57 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		CD63022327497C6500B8AC57 /* SearchWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWC.swift; sourceTree = "<group>"; };
+		CD7057DC274C39D500DE188B /* SearchResultCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewItem.swift; sourceTree = "<group>"; };
+		CD7057DD274C39D500DE188B /* SearchResultCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCollectionViewItem.xib; sourceTree = "<group>"; };
 		CD80188D273A552000DAE7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CD9A835A273D1262009F6B04 /* PreferencesWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWC.swift; sourceTree = "<group>"; };
 		CD9A835C273D12AC009F6B04 /* PreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				CD9A835A273D1262009F6B04 /* PreferencesWC.swift */,
 				CD63022127497C4800B8AC57 /* SearchVC.swift */,
 				CD63022327497C6500B8AC57 /* SearchWC.swift */,
+				CD7057DC274C39D500DE188B /* SearchResultCollectionViewItem.swift */,
+				CD7057DD274C39D500DE188B /* SearchResultCollectionViewItem.xib */,
 				CD0DFCDE2743D0A8005725FE /* SignInVC.swift */,
 				CD0DFCDC2743D099005725FE /* SignInWC.swift */,
 				CD2E05AF2739688700C7D374 /* StatusBarController.swift */,
@@ -165,6 +171,7 @@
 			files = (
 				CD2E05A52739670B00C7D374 /* Assets.xcassets in Resources */,
 				CD2E05A82739670C00C7D374 /* Main.storyboard in Resources */,
+				CD7057DF274C39D500DE188B /* SearchResultCollectionViewItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +185,7 @@
 				CD0DFCDF2743D0A8005725FE /* SignInVC.swift in Sources */,
 				CD63022227497C4800B8AC57 /* SearchVC.swift in Sources */,
 				CD0DFCDD2743D099005725FE /* SignInWC.swift in Sources */,
+				CD7057DE274C39D500DE188B /* SearchResultCollectionViewItem.swift in Sources */,
 				CDB4A0E9273D2DA70084AD53 /* Configuration.swift in Sources */,
 				CD9A835D273D12AC009F6B04 /* PreferencesVC.swift in Sources */,
 				CD63022427497C6500B8AC57 /* SearchWC.swift in Sources */,
