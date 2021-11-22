@@ -113,11 +113,18 @@ extension SearchVC: NSCollectionViewDataSource {
 extension SearchVC: NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        guard let firstItem = indexPaths.first else {
-            return
-        }
+        guard let firstItem = indexPaths.first else { return }
+        guard let selectedItem = searchResultsCollectionView.item(at: firstItem) else { return }
+        (selectedItem as? SearchResultCollectionViewItem)?.setHighlight(selected: true)
         
         print("Selected \(self.searchResult[firstItem.item])")
+    }
+    
+    
+    func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
+        guard let firstItem = indexPaths.first else { return }
+        guard let selectedItem = searchResultsCollectionView.item(at: firstItem) else { return }
+        (selectedItem as? SearchResultCollectionViewItem)?.setHighlight(selected: false)
     }
     
 }
