@@ -933,7 +933,7 @@ Gw
         <!--New Note-->
         <scene sceneID="2N2-CA-a2d">
             <objects>
-                <viewController title="New Note" id="DWT-W7-sdf" customClass="NewNoteVC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Note" storyboardIdentifier="newNoteVCID" id="DWT-W7-sdf" customClass="NewNoteVC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="xN3-wX-Fvu">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1009,7 +1009,7 @@ Gw
         <scene sceneID="6pe-s0-ovB">
             <objects>
                 <windowController storyboardIdentifier="searchWCID" id="CWK-ZH-CW1" customClass="SearchWC" customModule="NoteDisk" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Search" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="MlQ-U3-UnY">
+                    <window key="window" title="Search" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="MlQ-U3-UnY">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="294" y="313" width="480" height="270"/>
