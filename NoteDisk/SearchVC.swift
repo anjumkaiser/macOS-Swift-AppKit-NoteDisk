@@ -22,17 +22,12 @@ class SearchVC: NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        searchResult.append("ABCD")
-        searchResult.append("BCDE")
-        searchResult.append("CDEF")
-        searchResult.append("DEFG")
         searchResultsCollectionView.dataSource = self
         searchResultsCollectionView.delegate = self
         if let nibName = NSNib(nibNamed: "SearchResultCollectionViewItem", bundle: nil) {
             searchResultsCollectionView.register(nibName, forItemWithIdentifier: searchResultCollectionViewItemIdentifer)
         }
         NSApp.setActivationPolicy(.regular)
-        self.view.window?.makeKeyAndOrderFront(self)
         
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
             self.keyDown(with: $0)
