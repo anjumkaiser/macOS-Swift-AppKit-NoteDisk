@@ -47,6 +47,7 @@ class StatusBarController {
         menu.addItem(NSMenuItem(title: "Sign Up", action: #selector(self.signUpAction(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Sign In", action: #selector(self.signInAction(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "New Note", action: #selector(self.newNoteAction(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Search", action: #selector(self.searchAction(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Preferences", action: #selector(self.preferencesAction(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
