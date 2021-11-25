@@ -59,7 +59,6 @@ class SearchVC: NSViewController {
             doSearchString()
             //return
         }
-        super.keyDown(with: event)
     }
     
     func doSearchString() {
