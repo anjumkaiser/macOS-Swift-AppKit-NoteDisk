@@ -24,6 +24,8 @@ class SignInVC: NSViewController {
     
     private static let SIGN_IN_TEXT = "Sign In"
     private static let SIGN_UP_TEXT = "Sign Up"
+    fileprivate static let ERROR_TEXT = "Error"
+    fileprivate static let SUCCESS_TEXT = "Success"
     
     private static let SIGN_IN_URL_TEXT = "http://64.227.33.185:8080/api/signIn"
     private static let SIGN_UP_URL_TEXT = "http://64.227.33.185:8080/api/signUp"
@@ -92,20 +94,23 @@ class SignInVC: NSViewController {
             //print(response)
             
             if response.error != nil {
-                print("error is \(String(describing: response.error))")
-                print("Unable to connect")
+                self.showAlert(title: SignInVC.ERROR_TEXT, message: "Unable to connect")
                 return
             }
             
-            print("response data is \(String(describing: response.data))")
+            let responseString = String(data: response.data!, encoding: .utf8)
+            
+            print("response data is \(responseString!)")
             
             if self.mode == .SignIn {
                 
                 guard let respData: SignInResponseData = try? JSONDecoder().decode(SignInResponseData.self, from: response.data!) else {
+                    self.showAlert(title: SignInVC.ERROR_TEXT, message: "Invalid esponse")
                     return
                 }
                 
                 if respData.success == false {
+                    self.showAlert(title: SignInVC.ERROR_TEXT, message: "Unable to sign in")
                     return
                 }
                 
@@ -115,10 +120,12 @@ class SignInVC: NSViewController {
             } else if self.mode == .SignUp {
                 
                 guard let respData: SignUpResponseData = try? JSONDecoder().decode(SignUpResponseData.self, from: response.data!) else {
+                    self.showAlert(title: SignInVC.ERROR_TEXT, message: "Invalid response")
                     return
                 }
                 
                 if respData.success == false {
+                    self.showAlert(title: SignInVC.ERROR_TEXT, message: "Unable to sign in")
                     return
                 }
             }
@@ -129,6 +136,15 @@ class SignInVC: NSViewController {
             
         }
         
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = NSAlert()
+        alert.messageText = message
+        alert.informativeText = title
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        alert.beginSheetModal(for: self.view.window!)
     }
 }
 

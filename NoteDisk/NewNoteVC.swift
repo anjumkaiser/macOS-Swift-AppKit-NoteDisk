@@ -13,6 +13,7 @@ class NewNoteVC: NSViewController {
     @IBOutlet weak var noteTextField: NSTextField!
     
     private static let POST_URL_TEXT = "http://64.227.33.185:8080/api/post"
+    private static let ERROR_TEXT = "ERROR"
     
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -39,16 +40,19 @@ class NewNoteVC: NSViewController {
         AF.request(urlRequest).responseJSON { (response) in
             
             if response.error != nil {
-                print("error is \(String(describing: response.error))")
-                print("Unable to connect")
+                //print("error is \(String(describing: response.error))")
+                //print("Unable to connect")
+                self.showAlert(title: NewNoteVC.ERROR_TEXT, message: "Unable to connect")
                 return
             }
             
             guard let respData: NoteResponseData = try? JSONDecoder().decode(NoteResponseData.self, from: response.data!) else {
+                self.showAlert(title: NewNoteVC.ERROR_TEXT, message: "Invalid response")
                 return
             }
             
             if respData.success == false {
+                self.showAlert(title: NewNoteVC.ERROR_TEXT, message: "Unable to SignUp")
                 return
             }
             
@@ -57,6 +61,15 @@ class NewNoteVC: NSViewController {
             }
         }
         
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = NSAlert()
+        alert.messageText = message
+        alert.informativeText = title
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        alert.beginSheetModal(for: self.view.window!)
     }
     
 }
