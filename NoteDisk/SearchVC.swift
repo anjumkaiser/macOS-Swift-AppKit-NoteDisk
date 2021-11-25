@@ -12,6 +12,7 @@ import Alamofire
 class SearchVC: NSViewController {
     
     private static let SEARCH_URL_TEXT = "http://64.227.33.185:8080/api/search"
+    private static let ERROR_TEXT = "ERROR"
     
     private var searchResult : [String] = [String]()
     
@@ -44,9 +45,9 @@ class SearchVC: NSViewController {
         if event.keyCode == kVK_Escape {
             self.view.window?.orderOut(self)
             return
-        } else if event.keyCode == kVK_Return {
+        } else { //if event.keyCode == kVK_Return {
             doSearchString()
-            return
+            //return
         }
         super.keyDown(with: event)
     }
@@ -54,11 +55,11 @@ class SearchVC: NSViewController {
     func doSearchString() {
         var urlRequest: URLRequest
         urlRequest = URLRequest(url: URL(string: SearchVC.SEARCH_URL_TEXT)!)
-        let searchData: SearchData = SearchData(token: Configuration.shared.token, query: searchStringTextField.stringValue)
-        
         urlRequest.method = .post
-        urlRequest.setValue("appleication/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("appleication/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("appleication/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("appleication/json", forHTTPHeaderField: "Accept")
+        
+        let searchData: SearchData = SearchData(token: Configuration.shared.token, query: searchStringTextField.stringValue)
         
         let encodedData = try? JSONEncoder().encode(searchData)
         urlRequest.httpBody = encodedData
@@ -68,11 +69,12 @@ class SearchVC: NSViewController {
             
             if response.error != nil {
                 print("error is \(String(describing: response.error))")
-                print("Unable to connect")
+                //self.showAlert(title: SearchVC.ERROR_TEXT, message: "Unable to connect")
                 return
             }
             
             guard let respData: [String] = try? JSONDecoder().decode([String].self, from: response.data!) else {
+                //self.showAlert(title: SearchVC.ERROR_TEXT, message: "Invalid response")
                 return
             }
             
@@ -83,6 +85,15 @@ class SearchVC: NSViewController {
             self.searchResult = respData
             self.searchResultsCollectionView.reloadData()
         }
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = NSAlert()
+        alert.messageText = message
+        alert.informativeText = title
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        alert.beginSheetModal(for: self.view.window!)
     }
 }
 
