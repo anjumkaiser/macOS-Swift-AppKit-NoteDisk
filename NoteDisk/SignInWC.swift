@@ -9,4 +9,17 @@ import Cocoa
 
 class SignInWC: NSWindowController {
     
+    override func windowDidLoad() {
+        super.windowDidLoad()
+        self.configuraWindowAppearance()
+    }
+    
+    
+    func configuraWindowAppearance() {
+        guard let window = window else { return }
+        window.level = .mainMenu
+        window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+        window.backingType = .buffered
+    }
+    
 }
