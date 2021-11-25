@@ -109,13 +109,16 @@ class SignInVC: NSViewController {
                     return
                 }
                 
-                if respData.success != "true" {
+                if respData.success == false {
                     self.showAlert(title: SignInVC.ERROR_TEXT, message: "Unable to sign in")
                     return
                 }
                 
                 Configuration.shared.token = respData.token
                 print("token is \(respData.token)")
+                DispatchQueue.main.async {
+                    (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.closeSignInWindow()
+                }
                 
             } else if self.mode == .SignUp {
                 
@@ -124,29 +127,31 @@ class SignInVC: NSViewController {
                     return
                 }
                 
-                if respData.success != "true" {
+                if respData.success == false {
                     self.showAlert(title: SignInVC.ERROR_TEXT, message: "Unable to sign in")
                     return
                 }
                 
-                self.showAlert(title: SignInVC.SUCCESS_TEXT, message: "Signed up successfully")
-            }
-            
-            DispatchQueue.main.async {
-                (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.closeSignInWindow()
+                self.showAlert(title: SignInVC.SUCCESS_TEXT, message: "Signed up successfully", completionHandler: { (modalResponse) -> Void in
+                    if modalResponse == .alertFirstButtonReturn {
+                        DispatchQueue.main.async {
+                            (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.closeSignInWindow()
+                        }
+                    }
+                })
             }
             
         }
         
     }
     
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, completionHandler: ((NSApplication.ModalResponse) -> Void)? = nil) {
         let alert = NSAlert()
         alert.messageText = message
         alert.informativeText = title
         alert.alertStyle = .warning
         alert.addButton(withTitle: "OK")
-        alert.beginSheetModal(for: self.view.window!)
+        alert.beginSheetModal(for: self.view.window!, completionHandler: completionHandler)
     }
 }
 
@@ -159,7 +164,7 @@ fileprivate struct SignInData: Codable {
 
 
 fileprivate struct SignInResponseData: Codable {
-    let success: String
+    let success: Bool
     let token: String
 }
 
@@ -171,5 +176,5 @@ fileprivate struct SignUpData: Codable {
 
 
 fileprivate struct SignUpResponseData: Codable {
-    let success: String
+    let success: Bool
 }
