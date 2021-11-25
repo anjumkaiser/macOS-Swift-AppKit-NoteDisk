@@ -44,7 +44,6 @@ class SearchVC: NSViewController {
         } else {
             searchResultsCollectionView.reloadData()
         }
-        searchStringTextField.
     }
     
     override func viewWillDisappear() {
