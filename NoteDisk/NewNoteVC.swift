@@ -32,6 +32,9 @@ class NewNoteVC: NSViewController {
     @IBAction func postButton_Clicked(_ sender: Any) {
         var urlRequest: URLRequest
         urlRequest = URLRequest(url: URL(string: NewNoteVC.POST_URL_TEXT)!)
+        urlRequest.method = .post
+        urlRequest.setValue("appleication/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("appleication/json", forHTTPHeaderField: "Accept")
         let noteData: NoteData = NoteData(token: Configuration.shared.token, data: noteTextField.stringValue)
         
         let encodedData = try? JSONEncoder().encode(noteData)
@@ -51,7 +54,7 @@ class NewNoteVC: NSViewController {
                 return
             }
             
-            if respData.success == false {
+            if respData.success != "true" {
                 self.showAlert(title: NewNoteVC.ERROR_TEXT, message: "Unable to SignUp")
                 return
             }
@@ -82,5 +85,5 @@ fileprivate struct NoteData: Codable {
 
 
 fileprivate struct NoteResponseData: Codable {
-    let success: Bool
+    let success: String
 }

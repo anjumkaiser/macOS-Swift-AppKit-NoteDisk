@@ -84,8 +84,8 @@ class SignInVC: NSViewController {
         }
         
         urlRequest.method = .post
-        urlRequest.setValue("appleication/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("appleication/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("appleication/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("appleication/json", forHTTPHeaderField: "Accept")
         
         Configuration.shared.token = ""
         
@@ -109,7 +109,7 @@ class SignInVC: NSViewController {
                     return
                 }
                 
-                if respData.success == false {
+                if respData.success != "true" {
                     self.showAlert(title: SignInVC.ERROR_TEXT, message: "Unable to sign in")
                     return
                 }
@@ -124,10 +124,12 @@ class SignInVC: NSViewController {
                     return
                 }
                 
-                if respData.success == false {
+                if respData.success != "true" {
                     self.showAlert(title: SignInVC.ERROR_TEXT, message: "Unable to sign in")
                     return
                 }
+                
+                self.showAlert(title: SignInVC.SUCCESS_TEXT, message: "Signed up successfully")
             }
             
             DispatchQueue.main.async {
@@ -157,7 +159,7 @@ fileprivate struct SignInData: Codable {
 
 
 fileprivate struct SignInResponseData: Codable {
-    let success: Bool
+    let success: String
     let token: String
 }
 
@@ -169,5 +171,5 @@ fileprivate struct SignUpData: Codable {
 
 
 fileprivate struct SignUpResponseData: Codable {
-    let success: Bool
+    let success: String
 }
