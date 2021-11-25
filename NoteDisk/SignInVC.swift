@@ -121,7 +121,8 @@ class SignInVC: NSViewController {
                 self.showAlert(title: SignInVC.SUCCESS_TEXT, message: "Sign in successfully", completionHandler: { (modalResponse) -> Void in
                     if modalResponse == .alertFirstButtonReturn {
                         DispatchQueue.main.async {
-                            (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.closeSignInWindow()
+                            (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.constructMenu()
+                            (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.closeSignInWindow()                            
                         }
                     }
                 })
