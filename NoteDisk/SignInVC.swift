@@ -33,6 +33,8 @@ class SignInVC: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         NSApp.setActivationPolicy(.regular)
+        emailTextField.stringValue = ""
+        passwordTextField.stringValue = ""
         
         if mode == .SignIn {
             signInButton.title = SignInVC.SIGN_IN_TEXT

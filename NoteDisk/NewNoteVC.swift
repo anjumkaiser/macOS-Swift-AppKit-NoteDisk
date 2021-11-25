@@ -18,6 +18,7 @@ class NewNoteVC: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         NSApp.setActivationPolicy(.regular)
+        noteTextField.stringValue = ""
     }
     
     override func viewWillDisappear() {

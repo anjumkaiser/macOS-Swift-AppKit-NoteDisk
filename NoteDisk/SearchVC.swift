@@ -23,6 +23,8 @@ class SearchVC: NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        searchStringTextField.stringValue = ""
+        searchResult.removeAll()
         searchResultsCollectionView.dataSource = self
         searchResultsCollectionView.delegate = self
         if let nibName = NSNib(nibNamed: "SearchResultCollectionViewItem", bundle: nil) {
@@ -34,6 +36,10 @@ class SearchVC: NSViewController {
             self.keyDown(with: $0)
             return $0
         }
+    }
+    
+    override func viewDidAppear() {
+        searchResultsCollectionView.reloadData()
     }
     
     override func viewWillDisappear() {
