@@ -22,6 +22,11 @@ class NewNoteVC: NSViewController {
         noteTextField.stringValue = NSPasteboard.general.pasteboardItems?.first?.string(forType: .string) ?? ""
     }
     
+    override func viewDidAppear() {
+        NSApplication.shared.activate(ignoringOtherApps: true)
+        noteTextField.becomeFirstResponder()
+    }
+    
     override func viewWillDisappear() {
         super.viewWillDisappear()
         NSApp.setActivationPolicy(.accessory)
