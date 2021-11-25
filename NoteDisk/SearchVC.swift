@@ -39,6 +39,8 @@ class SearchVC: NSViewController {
     }
     
     override func viewDidAppear() {
+        NSApplication.shared.activate(ignoringOtherApps: true)
+        searchStringTextField.becomeFirstResponder()
         if searchStringTextField.stringValue != "" {
             doSearchString()
         } else {
