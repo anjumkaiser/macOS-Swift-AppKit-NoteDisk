@@ -55,9 +55,8 @@ class SearchVC: NSViewController {
         if event.keyCode == kVK_Escape {
             self.view.window?.orderOut(self)
             return
-        } else { //if event.keyCode == kVK_Return {
+        } else {
             doSearchString()
-            //return
         }
     }
     
