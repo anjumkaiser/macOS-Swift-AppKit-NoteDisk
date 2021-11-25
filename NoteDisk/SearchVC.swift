@@ -23,7 +23,7 @@ class SearchVC: NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        searchStringTextField.stringValue = ""
+        searchStringTextField.stringValue = NSPasteboard.general.pasteboardItems?.first?.string(forType: .string) ?? ""
         searchResult.removeAll()
         searchResultsCollectionView.dataSource = self
         searchResultsCollectionView.delegate = self
@@ -39,7 +39,12 @@ class SearchVC: NSViewController {
     }
     
     override func viewDidAppear() {
-        searchResultsCollectionView.reloadData()
+        if searchStringTextField.stringValue != "" {
+            doSearchString()
+        } else {
+            searchResultsCollectionView.reloadData()
+        }
+        searchStringTextField.
     }
     
     override func viewWillDisappear() {
