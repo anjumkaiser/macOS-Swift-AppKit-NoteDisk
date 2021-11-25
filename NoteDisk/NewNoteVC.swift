@@ -13,12 +13,13 @@ class NewNoteVC: NSViewController {
     @IBOutlet weak var noteTextField: NSTextField!
     
     private static let POST_URL_TEXT = "http://64.227.33.185:8080/api/post"
-    private static let ERROR_TEXT = "ERROR"
+    fileprivate static let ERROR_TEXT = "ERROR"
+    fileprivate static let SUCCESS_TEXT = "Success"
     
     override func viewWillAppear() {
         super.viewWillAppear()
         NSApp.setActivationPolicy(.regular)
-        noteTextField.stringValue = ""
+        noteTextField.stringValue = NSPasteboard.general.pasteboardItems?.first?.string(forType: .string) ?? ""
     }
     
     override func viewWillDisappear() {
@@ -60,20 +61,24 @@ class NewNoteVC: NSViewController {
                 return
             }
             
-            DispatchQueue.main.async {
-                (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.closeNoteWindow()
-            }
+            self.showAlert(title: NewNoteVC.SUCCESS_TEXT, message: "Note posted successfully", completionHandler: { (modalResponse) -> Void in
+                if modalResponse == .alertFirstButtonReturn {
+                    DispatchQueue.main.async {
+                        (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.closeNoteWindow()
+                    }
+                }
+            })
         }
         
     }
     
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, completionHandler: ((NSApplication.ModalResponse) -> Void)? = nil) {
         let alert = NSAlert()
         alert.messageText = message
         alert.informativeText = title
         alert.alertStyle = .warning
         alert.addButton(withTitle: "OK")
-        alert.beginSheetModal(for: self.view.window!)
+        alert.beginSheetModal(for: self.view.window!, completionHandler: completionHandler)
     }
     
 }
