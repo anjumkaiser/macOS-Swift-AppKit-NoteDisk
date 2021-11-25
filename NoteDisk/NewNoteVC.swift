@@ -54,7 +54,7 @@ class NewNoteVC: NSViewController {
                 return
             }
             
-            if respData.success != "true" {
+            if respData.success == false {
                 self.showAlert(title: NewNoteVC.ERROR_TEXT, message: "Unable to SignUp")
                 return
             }
@@ -85,5 +85,5 @@ fileprivate struct NoteData: Codable {
 
 
 fileprivate struct NoteResponseData: Codable {
-    let success: String
+    let success: Bool
 }
