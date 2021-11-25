@@ -118,9 +118,13 @@ class SignInVC: NSViewController {
                 
                 Configuration.shared.token = respData.token
                 print("token is \(respData.token)")
-                DispatchQueue.main.async {
-                    (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.closeSignInWindow()
-                }
+                self.showAlert(title: SignInVC.SUCCESS_TEXT, message: "Sign in successfully", completionHandler: { (modalResponse) -> Void in
+                    if modalResponse == .alertFirstButtonReturn {
+                        DispatchQueue.main.async {
+                            (NSApplication.shared.delegate as? AppDelegate)?.statusBarController.closeSignInWindow()
+                        }
+                    }
+                })
                 
             } else if self.mode == .SignUp {
                 
