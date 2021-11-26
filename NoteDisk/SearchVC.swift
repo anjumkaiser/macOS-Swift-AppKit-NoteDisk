@@ -23,7 +23,8 @@ class SearchVC: NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        searchStringTextField.stringValue = NSPasteboard.general.pasteboardItems?.first?.string(forType: .string) ?? ""
+        //searchStringTextField.stringValue = NSPasteboard.general.pasteboardItems?.first?.string(forType: .string) ?? ""
+        searchStringTextField.stringValue = ""
         searchResult.removeAll()
         searchResultsCollectionView.dataSource = self
         searchResultsCollectionView.delegate = self
